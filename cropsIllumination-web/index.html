@@ -1,0 +1,166 @@
+<!DOCTYPE html >
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"  >
+<link rel="stylesheet" href="css/timeline.css">
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<link rel="stylesheet" href="css/powerange.min.css"/>
+<title>农作物光强温度检测于曲线展示系统</title>
+
+</head>
+<body>
+	<div class="header">
+		<div class="container row header-body">
+			<div class="col-8 header-left">
+				<h1>农作物光强温度检测与曲线展示系统</h1>
+			</div>
+			<div class="col-4 header-right" id="ConnectState">数据服务连接中...</div>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="panel">
+						<div class="panel-body p20">
+							<div class="row hr">
+								<div class="row">
+									<div class="col-3 ">
+										<img class="panel-body-img-ture" src="images/dp1.jpg" alt="光照度传感器" />
+									
+									</div>
+									<div class="col-9 ">
+										<div class="row">
+											<div class="col-1 "></div>
+											<div class="col-6 ">
+												<h3>光照度传感器</h3>
+											</div>
+											<div class="col-1 ">
+												<div id="images">
+													<img class="bgd_status " src="images/bgd_green.jpg" />
+												</div>
+											</div>
+											<div class="col-05"></div>
+											<div class="col-3">
+												<button type="button" class="button buttonColor3" id="set_bgd">
+													关闭
+												</button>
+											</div>
+										</div>
+										<div class="hr"></div>
+										<div class="row">
+											<div class="col-4 ">
+												<p>光照强度：<span class="condition" id="currentTem">0Lux</span></p>
+											</div>
+											<!--<div class="col-2">
+			<button type="button" class="button buttonColor1" id="searchTem">查询</button>
+		</div>-->
+											<div class="col-3">
+												<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<span class="input-group-addon">
+														光强上限
+													</span>
+													<input type="text" id="high_light" class="zhi-body" value="1000" />
+												</div>
+												<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<span class="input-group-addon">
+														光强下限
+													</span>
+													<input type="text" id="low_light" class="zhi-body" value="500" />
+												</div>
+											</div>
+											<div class="col-05"></div>
+											<div class="col-2">
+												<button type="button" class="button buttonColor1" id="input_data">保存</button>
+											</div>
+										</div>
+										<div class="hr"></div>
+										<div class="row">
+											<div class="col-1 "></div>
+											<div class="col-6 ">
+												<h3>温度传感器</h3>
+											</div>
+											<div class="col-1 ">
+												<div id="images1">
+													<img class="bgd_status " src="images/bgd_green.jpg" />
+												</div>
+											</div>
+											<div class="col-05"></div>
+											<div class="col-3">
+												<button type="button" class="button buttonColor3" id="set_bgd1">
+													关闭
+												</button>
+											</div>
+										</div>
+										<div class="hr"></div>
+										<div class="row">
+											<div class="col-4 ">
+												<p>温度：<span class="condition" id="currentTem1">0℃</span></p>
+											</div>
+											<div class="col-3">
+												<div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<span class="input-group-addon">
+														温度上限
+													</span>
+													<input type="text" id="high_tem" class="zhi-body" value="40" />
+												</div><div class="input-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<span class="input-group-addon">
+														温度下限
+													</span>
+													<input type="text" id="low_tem" class="zhi-body" value="10" />
+												</div>
+
+											</div>
+											<div class="col-05"></div>
+											<div class="col-2">
+												<button type="button" class="button buttonColor1" id="input_data1">保存</button>
+											</div>
+										</div>
+										<!--<div class="hr"></div>
+										<div class="row">
+											<div>
+												<button type="button" class="button buttonColor4" id="searchTem">光照</button>
+												<button type="button" class="button buttonColor4" id="searchTem1">温度</button>
+											</div>-->
+											<!--<div>
+												<button type="button" class="button buttonColor4" id="searchTem1">查看</button>
+											</div>-->
+										</div>
+										<div class="hr"></div>
+									</div>
+							</div>
+							<div class="container">
+								<div>
+									<div id="line_charts" style="width:1140px;height:250px;margin:0 auto;"></div>
+								</div>
+							</div>
+							<div class="container">
+								<div>
+									<div id="line_charts1" style="width:1140px;height:250px;margin:0 auto;"></div>
+								</div>
+							</div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="row hr"></div>
+	<div class="footer"></div>
+	<!--引入js-->
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/powerange.min.js"></script>
+	<script type="text/javascript" src="js/chars/highcharts.js"></script>
+	<script type="text/javascript" src="js/chars/drawcharts.js"></script>
+	<script type="text/javascript" src="js/WSNProject/WSNRTConnect.js"></script>
+	<script type="text/javascript" src="js/WSNProject/WSNAutoctrl.js"></script>
+	<script type="text/javascript" src="fusioncharts/currentdata.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
